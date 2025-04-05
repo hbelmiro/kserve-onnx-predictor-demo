@@ -16,7 +16,7 @@ class ONNXModel(kserve.Model):
         self.load()
 
     def load(self):
-        model_path = os.getenv("MODEL_PATH", "/mnt/models/model.onnx")
+        model_path = "./models/fraud/1/model.onnx"
         self.model = ort.InferenceSession(model_path)
         self.ready = True
 

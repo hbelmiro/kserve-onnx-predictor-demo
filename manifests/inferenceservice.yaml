@@ -1,0 +1,10 @@
+apiVersion: serving.kserve.io/v1beta1
+kind: InferenceService
+metadata:
+  name: onnx-model
+  namespace: onnx-model
+spec:
+  predictor:
+    containers:
+      - name: kserve-container
+        image: quay.io/hbelmiro/kserve-onnx-predictor-demo:latest

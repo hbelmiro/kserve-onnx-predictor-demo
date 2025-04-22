@@ -108,8 +108,7 @@ This deploys the `InferenceService` in the `onnx-model` namespace.
 KServe services lack selectors, so port-forward to the pod:
 
 ```shell
-kubectl get pods -n onnx-model -l serving.kserve.io/inferenceservice=onnx-model -o jsonpath="{.items[0]
-.metadata.name}" | xargs -I {} kubectl port-forward -n onnx-model pod/{} 8080:8080
+kubectl get pods -n onnx-model -l serving.kserve.io/inferenceservice=onnx-model -o jsonpath="{.items[0].metadata.name}" | xargs -I {} kubectl port-forward -n onnx-model pod/{} 8080:8080
 ```
 
 ### Run a Test Request
